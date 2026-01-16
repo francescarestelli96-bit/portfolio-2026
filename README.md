@@ -1,37 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌈 Francesca Restelli | Portfolio 2026
 
-## Getting Started
+Benvenuti nella mia officina digitale! Questo progetto rappresenta il mio percorso ibrido: un mix di **HR Management**, **Web Development** e **Content Creation** nel mondo moto. 🏍️💻
 
-First, run the development server:
+### 🚀 Link al sito Live
+Guarda il portfolio interattivo qui:  
+👉 **[francescarestelli.vercel.app](https://francescarestelli.vercel.app)**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Tech Stack
+Il sito è stato costruito con le ultime tecnologie web per garantire velocità, eleganza e una perfetta esperienza utente:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework:** [Next.js](https://nextjs.org/) (React)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Layout:** Bento Grid Design
+- **Deployment:** [Vercel](https://vercel.com/)
+- **Interattività:** Framer Motion / CSS Animations
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 👩‍💻 Chi sono
+Sono una professionista che crede nel potere della tecnologia al servizio delle persone. Affianco la mia esperienza pluriennale nelle Risorse Umane allo sviluppo frontend, portando un approccio **Human-Centered** in ogni riga di codice. 
 
-## Learn More
+Quando non sono davanti a VS Code, mi trovi in sella alla mia Ducati Monster 696 o a creare contenuti per la mia community di motociclisti.
 
-To learn more about Next.js, take a look at the following resources:
+## 📁 Progetti in evidenza
+All'interno del portfolio puoi esplorare:
+- **Ridescape:** Community platform per motociclisti.
+- **Alberto Chines Site:** Sito portfolio professionale.
+- **Relax Room:** App interattiva in TypeScript.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📫 Contatti
+- **LinkedIn:** [Francesca Restelli](https://www.linkedin.com/in/francesca-restelli-413b6376)
+- **Instagram:** [@francescarestelli_webiker](https://www.instagram.com/francescarestelli_webiker/)
+- **Email:** [francesres@icloud.com](mailto:francesres@icloud.com)
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# portfolio-2026
+---
+*Fatto con grinta, codice e un pizzico di polvere di stelle. ✨*
