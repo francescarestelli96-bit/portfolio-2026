@@ -10,7 +10,7 @@ export default function Home() {
       boxes: [
         { id: 1, title: "Ciao", sub: "FRANCESCA RESTELLI", emoji: "👋", color: "bg-pastel-blue", 
           text: "Ciao, sono Francesca. Il mio percorso nel mondo tech non è stato lineare, ed è proprio questo il mio punto di forza. Dopo un'esperienza nel settore HR, ho deciso di assecondare la mia vocazione analitica e creativa studiando sviluppo web. Oggi unisco la capacità di comprendere i bisogni delle persone con la precisione tecnica del codice." },
-        { id: 2, title: "Moto", sub: "DUCATI MONSTER 696", emoji: "🏍️", color: "bg-pastel-green", 
+        { id: 2, title: "Moto", sub: "DUCATI MONSTER 696", emoji: "🏍️", color: "bg-pastel-green", image: "/moto.jpg",
           text: "La mia Ducati Monster 696 rappresenta il mio equilibrio. Guidare richiede concentrazione e rapidità decisionale. Porto questa stessa mentalità nel mio lavoro: affrontare le sfide con grinta e risolvere i problemi in tempo reale." },
         { id: 3, title: "Progetti", sub: "SELECTED PROJECTS", emoji: "→", color: "bg-slate-900", 
           text: "Clicca sui progetti per vedere il codice su GitHub.",
@@ -40,7 +40,7 @@ export default function Home() {
       boxes: [
         { id: 1, title: "Hello", sub: "FRANCESCA RESTELLI", emoji: "👋", color: "bg-pastel-blue", 
           text: "Hi, I’m Francesca. My journey into tech hasn't been linear. I combine human needs with technical coding precision." },
-        { id: 2, title: "Bike", sub: "DUCATI MONSTER 696", emoji: "🏍️", color: "bg-pastel-green", 
+        { id: 2, title: "Bike", sub: "DUCATI MONSTER 696", emoji: "🏍️", color: "bg-pastel-green", image: "/moto.jpg",
           text: "My Ducati Monster 696 represents my balance. I bring this same mindset to my work: grit and real-time problem solving." },
         { id: 3, title: "Works", sub: "SELECTED PROJECTS", emoji: "→", color: "bg-slate-900", 
           text: "Click on projects to view the source code on GitHub.",
@@ -72,61 +72,67 @@ export default function Home() {
   const activeBox = currentBoxes.find(b => b.id === selectedBox);
 
   return (
-    <main className="h-screen w-screen flex flex-col items-center justify-center p-8 md:p-16">
-      <div className="absolute top-10 right-10 z-10">
+    <main className="min-h-screen w-screen flex flex-col items-center justify-start md:justify-center p-6 md:p-16 overflow-y-auto">
+      
+      {/* Switch Lingua */}
+      <div className="w-full flex justify-end mb-6 md:absolute md:top-10 md:right-10 z-10">
         <button 
           onClick={() => setLang(lang === 'it' ? 'en' : 'it')}
-          className="bg-white/90 border border-white px-5 py-2 rounded-full font-bold text-[10px] tracking-[0.2em] shadow-lg cursor-pointer hover:scale-105 transition-all"
+          className="bg-white/90 border border-white px-5 py-2 rounded-full font-bold text-[10px] tracking-[0.2em] shadow-lg cursor-pointer active:scale-95 transition-all"
         >
           {lang === 'it' ? 'ENGLISH' : 'ITALIANO'}
         </button>
       </div>
 
-      <div className="w-full max-w-5xl h-full max-h-[550px] grid grid-cols-4 grid-rows-3 gap-5">
+      {/* Grid Bento Responsive */}
+      <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-5">
         {currentBoxes.map((box) => (
           <div 
             key={box.id}
             onClick={() => setSelectedBox(box.id)}
-            className={`${box.id <= 4 ? 'col-span-1 row-span-2' : 'col-span-2 row-span-1'} 
-              ${box.color} rounded-[2.5rem] p-8 flex flex-col justify-between border border-white/40 
-              bento-card hover:scale-[1.03] hover:shadow-2xl cursor-pointer group relative overflow-hidden`}
+            className={`
+              ${box.id <= 4 ? 'md:col-span-1 md:row-span-2' : 'md:col-span-2 md:row-span-1'} 
+              ${box.color} rounded-[2.5rem] p-6 md:p-8 flex flex-col justify-between border border-white/40 
+              bento-card hover:scale-[1.02] hover:shadow-2xl cursor-pointer group min-h-[160px] md:h-auto`}
           >
             <h2 className={`text-2xl lg:text-3xl font-light tracking-tight ${box.id === 3 ? 'text-white' : 'text-slate-950'}`}>{box.title}</h2>
-            <div className="text-5xl group-hover:scale-110 transition-transform duration-500">{box.emoji}</div>
+            <div className="text-4xl md:text-5xl group-hover:scale-110 transition-transform duration-500 my-4">{box.emoji}</div>
             <p className={`text-[8px] font-bold tracking-[0.2em] uppercase ${box.id === 3 ? 'text-slate-500' : 'text-slate-900/40'}`}>{box.sub}</p>
           </div>
         ))}
       </div>
 
+      {/* MODALE CON FOTO */}
       {selectedBox && activeBox && (
-        <div 
-          className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-slate-900/30 backdrop-blur-xl"
-          onClick={() => setSelectedBox(null)}
-        >
-          <div 
-            className="bg-white rounded-[3rem] p-10 md:p-16 max-w-2xl w-full shadow-2xl modal-enter relative"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button onClick={() => setSelectedBox(null)} className="absolute top-10 right-10 text-slate-300 hover:text-slate-900 transition-colors text-2xl">✕</button>
-            <div className="mb-8">
-               <span className="text-5xl mb-4 block">{activeBox.emoji}</span>
-               <h3 className="text-4xl font-light tracking-tight text-slate-900">{activeBox.title}</h3>
-               <p className="text-[10px] font-bold tracking-[0.2em] text-slate-400 uppercase mt-2">{activeBox.sub}</p>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-xl" onClick={() => setSelectedBox(null)}>
+          <div className="bg-white rounded-[2.5rem] p-8 md:p-12 max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl modal-enter relative" onClick={(e) => e.stopPropagation()}>
+            <button onClick={() => setSelectedBox(null)} className="absolute top-6 right-6 text-slate-300 hover:text-slate-900 text-2xl">✕</button>
+            
+            <div className="mb-6">
+               <span className="text-4xl mb-2 block">{activeBox.emoji}</span>
+               <h3 className="text-3xl font-light tracking-tight text-slate-900">{activeBox.title}</h3>
+               <p className="text-[10px] font-bold tracking-[0.2em] text-slate-400 uppercase mt-1">{activeBox.sub}</p>
             </div>
-            <p className="text-slate-600 leading-relaxed text-lg font-light mb-8">{activeBox.text}</p>
+
+            {/* Inserimento Foto Moto */}
+            {activeBox.image && (
+              <div className="mb-6 rounded-2xl overflow-hidden shadow-lg border border-slate-100">
+                <img src={activeBox.image} alt="Moto" className="w-full h-64 object-cover" />
+              </div>
+            )}
+            
+            <p className="text-slate-600 leading-relaxed text-base font-light mb-8">{activeBox.text}</p>
             
             {activeBox.projects && (
               <div className="grid grid-cols-1 gap-3">
                 {activeBox.projects.map((proj, idx) => (
-                  <a key={idx} href={proj.url} target="_blank" rel="noopener noreferrer" className="project-link">
-                    • {proj.name}
-                  </a>
+                  <a key={idx} href={proj.url} target="_blank" rel="noopener noreferrer" className="project-link">• {proj.name}</a>
                 ))}
               </div>
             )}
 
             {activeBox.socials && (
-              <div className="flex flex-wrap gap-4 mt-2">
+              <div className="flex flex-wrap gap-3 mt-2">
                 {activeBox.socials.map((social, idx) => (
                   <a key={idx} href={social.url} target="_blank" rel="noopener noreferrer" className="social-link">{social.name}</a>
                 ))}
@@ -136,7 +142,7 @@ export default function Home() {
         </div>
       )}
 
-      <footer className="mt-12 opacity-20">
+      <footer className="py-8 opacity-20 text-center w-full">
         <p className="text-[8px] tracking-[1.5em] uppercase font-bold text-slate-900">Fra Portfolio 2026</p>
       </footer>
     </main>
