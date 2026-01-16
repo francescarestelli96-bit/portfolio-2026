@@ -84,7 +84,7 @@ export default function Home() {
         </button>
       </div>
 
-      {/* Grid Bento Responsive */}
+      {/* Grid Bento */}
       <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-5">
         {currentBoxes.map((box) => (
           <div 
@@ -102,24 +102,27 @@ export default function Home() {
         ))}
       </div>
 
-      {/* MODALE CON FOTO */}
+      {/* MODALE CON FOTO PICCOLA AFFIANCATA */}
       {selectedBox && activeBox && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-xl" onClick={() => setSelectedBox(null)}>
           <div className="bg-white rounded-[2.5rem] p-8 md:p-12 max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl modal-enter relative" onClick={(e) => e.stopPropagation()}>
             <button onClick={() => setSelectedBox(null)} className="absolute top-6 right-6 text-slate-300 hover:text-slate-900 text-2xl">✕</button>
             
-            <div className="mb-6">
-               <span className="text-4xl mb-2 block">{activeBox.emoji}</span>
-               <h3 className="text-3xl font-light tracking-tight text-slate-900">{activeBox.title}</h3>
-               <p className="text-[10px] font-bold tracking-[0.2em] text-slate-400 uppercase mt-1">{activeBox.sub}</p>
-            </div>
+            <div className="flex items-center gap-6 mb-8">
+               {/* Se c'è l'immagine, la mettiamo qui a sinistra del titolo */}
+               {activeBox.image ? (
+                 <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl overflow-hidden border-2 border-slate-100 shadow-sm flex-shrink-0">
+                    <img src={activeBox.image} alt="Avatar" className="w-full h-full object-cover" />
+                 </div>
+               ) : (
+                 <span className="text-5xl flex-shrink-0">{activeBox.emoji}</span>
+               )}
 
-            {/* Inserimento Foto Moto */}
-            {activeBox.image && (
-              <div className="mb-6 rounded-2xl overflow-hidden shadow-lg border border-slate-100">
-                <img src={activeBox.image} alt="Moto" className="w-full h-64 object-cover" />
-              </div>
-            )}
+               <div>
+                  <h3 className="text-3xl md:text-4xl font-light tracking-tight text-slate-900 leading-tight">{activeBox.title}</h3>
+                  <p className="text-[10px] font-bold tracking-[0.2em] text-slate-400 uppercase mt-1">{activeBox.sub}</p>
+               </div>
+            </div>
             
             <p className="text-slate-600 leading-relaxed text-base font-light mb-8">{activeBox.text}</p>
             
