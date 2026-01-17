@@ -71,38 +71,35 @@ export default function Home() {
 
   return (
     <main className="min-h-screen w-screen flex flex-col items-center justify-center p-6 md:p-16 relative">
-      {/* Switch Lingua */}
       <div className="absolute top-6 right-6 md:top-10 md:right-10 z-20">
         <button onClick={() => setLang(lang === 'it' ? 'en' : 'it')} className="lang-switch">
           {lang === 'it' ? 'EN' : 'IT'}
         </button>
       </div>
 
-      {/* Grid Bento */}
       <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-fr md:h-[550px] mt-12 md:mt-0">
         {currentBoxes.map((box) => (
           <div key={box.id} onClick={() => setSelectedBox(box.id)}
             className={`${box.id <= 4 ? 'md:col-span-1 md:row-span-2' : 'md:col-span-2 md:row-span-1'} 
               ${box.color} bento-card rounded-[2.5rem] p-8 flex flex-col justify-between cursor-pointer group shadow-2xl`}
           >
-            <h2 className="text-xl md:text-2xl font-light tracking-[0.1em] uppercase">{box.title}</h2>
-            <div className="text-4xl opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500">{box.emoji}</div>
-            <p className="text-[10px] font-bold tracking-[0.3em] text-white uppercase">{box.sub}</p>
+            <h2 className="text-2xl font-bold tracking-[0.05em] uppercase text-white drop-shadow-md">{box.title}</h2>
+            <div className="text-4xl group-hover:scale-110 transition-all duration-500 drop-shadow-lg">{box.emoji}</div>
+            <p className="text-[11px] font-black tracking-[0.2em] text-white/90 uppercase drop-shadow-sm">{box.sub}</p>
           </div>
         ))}
       </div>
 
-      {/* Modale Glass */}
       {selectedBox && activeBox && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-2xl" onClick={() => setSelectedBox(null)}>
-          <div className="bg-white/10 border border-white/20 backdrop-blur-md rounded-[3rem] p-10 md:p-14 max-w-2xl w-full relative shadow-2xl" onClick={(e) => e.stopPropagation()}>
-            <button onClick={() => setSelectedBox(null)} className="absolute top-8 right-8 text-white/30 hover:text-white text-xl">✕</button>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-2xl" onClick={() => setSelectedBox(null)}>
+          <div className="bg-white/10 border border-white/30 backdrop-blur-xl rounded-[3rem] p-10 md:p-14 max-w-2xl w-full relative shadow-2xl" onClick={(e) => e.stopPropagation()}>
+            <button onClick={() => setSelectedBox(null)} className="absolute top-8 right-8 text-white/50 hover:text-white text-2xl">✕</button>
             <div className="mb-6">
-                <span className="text-4xl mb-2 block">{activeBox.emoji}</span>
-                <h3 className="text-3xl font-light tracking-tight">{activeBox.title}</h3>
-                <p className="text-[10px] font-bold tracking-[0.3em] text-white/60 uppercase mt-1">{activeBox.sub}</p>
+                <span className="text-5xl mb-4 block drop-shadow-md">{activeBox.emoji}</span>
+                <h3 className="text-4xl font-bold tracking-tight text-white mb-2">{activeBox.title}</h3>
+                <p className="text-[12px] font-black tracking-[0.3em] text-white/70 uppercase">{activeBox.sub}</p>
             </div>
-            <p className="text-white/80 leading-relaxed mb-10 text-lg font-light">{activeBox.text}</p>
+            <p className="text-white leading-relaxed mb-10 text-xl font-medium drop-shadow-sm">{activeBox.text}</p>
             {activeBox.projects && (
               <div className="grid gap-3">{activeBox.projects.map((p, i) => <a key={i} href={p.url} target="_blank" rel="noopener noreferrer" className="project-link">/ {p.name}</a>)}</div>
             )}
@@ -113,9 +110,8 @@ export default function Home() {
         </div>
       )}
 
-      {/* Footer Bianco Visibile */}
-      <footer className="mt-16 border-t border-white/10 pt-8 w-full max-w-5xl flex justify-center">
-        <p className="text-[10px] tracking-[2.5em] uppercase font-bold text-white ml-[2.5em]">FR / PORTFOLIO 2026</p>
+      <footer className="mt-16 border-t border-white/20 pt-8 w-full max-w-5xl flex justify-center">
+        <p className="text-[11px] tracking-[2.5em] uppercase font-black text-white ml-[2.5em]">FR / PORTFOLIO 2026</p>
       </footer>
     </main>
   );

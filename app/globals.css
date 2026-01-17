@@ -6,7 +6,6 @@ html, body {
   width: 100vw;
   min-height: 100vh;
   overflow-x: hidden;
-  /* Sfondo Sott'acqua - Assicurati di aver messo underwater.jpg in public */
   background-image: url('/underwater.jpg');
   background-size: cover;
   background-position: center;
@@ -16,56 +15,52 @@ html, body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Effetto Glassmorphism per i Box */
 .bento-card {
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  /* Bordo più visibile per staccare dallo sfondo */
+  border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .bento-card:hover {
   transform: scale(1.02) translateY(-5px);
-  background-color: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.4);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
 }
 
-/* Palette Dark Glass - Trasparenze colorate */
-.card-navy { background-color: rgba(17, 34, 64, 0.4); }
-.card-forest { background-color: rgba(12, 26, 26, 0.4); }
-.card-rose { background-color: rgba(61, 21, 35, 0.4); }
-.card-purple { background-color: rgba(45, 27, 77, 0.4); }
-.card-petrol { background-color: rgba(10, 37, 51, 0.4); }
-.card-white { background-color: rgba(255, 255, 255, 0.85); color: #050a15; }
+/* Colori più solidi per non confondersi con l'acqua */
+.card-navy { background-color: rgba(17, 34, 64, 0.8); }
+.card-forest { background-color: rgba(15, 35, 35, 0.8); }
+.card-rose { background-color: rgba(85, 25, 45, 0.8); }
+.card-purple { background-color: rgba(55, 35, 90, 0.8); }
+.card-petrol { background-color: rgba(15, 55, 75, 0.8); }
+.card-white { background-color: rgba(255, 255, 255, 0.95); color: #050a15; }
 
-/* Switch Lingua */
 .lang-switch {
-  @apply border border-white/40 bg-white/10 backdrop-blur-md px-5 py-2 rounded-full 
+  @apply border border-white/50 bg-white/20 backdrop-blur-md px-5 py-2 rounded-full 
          text-[10px] tracking-[0.2em] text-white hover:bg-white hover:text-black 
          transition-all duration-300 font-bold uppercase;
 }
 
-/* Social e Link */
 .social-link {
-  @apply flex items-center justify-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-md rounded-full 
+  @apply flex items-center justify-center gap-2 px-6 py-3 bg-white/20 backdrop-blur-md rounded-full 
          font-bold text-[10px] tracking-[0.2em] uppercase hover:bg-white hover:text-[#050a15] 
-         transition-all duration-300 border border-white/20;
+         transition-all duration-300 border border-white/30;
 }
 
 .project-link {
-  @apply block p-5 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 font-bold text-white 
+  @apply block p-5 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 font-bold text-white 
          text-[10px] tracking-[0.2em] uppercase transition-all hover:bg-white 
          hover:text-[#050a15] hover:pl-8;
 }
 
-/* Animazione per dare vita all'acqua */
 @keyframes underwater {
   0% { background-position: 50% 50%; }
-  50% { background-position: 52% 48%; }
+  50% { background-position: 51% 49%; }
   100% { background-position: 50% 50%; }
 }
 
 body {
-  animation: underwater 20s ease-in-out infinite;
+  animation: underwater 15s ease-in-out infinite;
 }
