@@ -23,19 +23,29 @@ html, body {
   transition: all 0.5s cubic-bezier(0.2, 0, 0, 1);
 }
 
-.bento-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 15px 35px rgba(255, 255, 255, 0.1);
+/* Colori Vibranti */
+.card-navy { background-color: rgba(30, 100, 255, 0.45); }
+.card-rose { background-color: rgba(255, 40, 100, 0.45); }
+.card-projects { background-color: rgba(60, 60, 70, 0.6); }
+.card-forest { background-color: rgba(0, 220, 150, 0.4); }
+.card-purple { background-color: rgba(180, 50, 255, 0.45); }
+.card-petrol { background-color: rgba(0, 180, 220, 0.45); }
+
+/* Fix Scrolling Modale */
+.modal-content {
+  max-height: 85vh; /* Evita che il box esca dallo schermo */
+  overflow-y: auto; /* Permette di scorrere il testo se è troppo lungo */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
 }
 
-/* Colori Brillanti e Vibranti */
-.card-navy { background-color: rgba(30, 100, 255, 0.45); }     /* Blue Elettrico */
-.card-rose { background-color: rgba(255, 40, 100, 0.45); }    /* Rosa Vibrante */
-.card-projects { background-color: rgba(60, 60, 70, 0.6); }    /* Grigio Fumo Brillante */
-.card-forest { background-color: rgba(0, 220, 150, 0.4); }    /* Smeraldo Brillante */
-.card-purple { background-color: rgba(180, 50, 255, 0.45); }  /* Viola Neon */
-.card-petrol { background-color: rgba(0, 180, 220, 0.45); }   /* Turchese Brillante */
+.modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+.modal-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
 
 .lang-switch {
   @apply border border-white/30 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full 
@@ -43,21 +53,8 @@ html, body {
          transition-all duration-300;
 }
 
-.social-link {
-  @apply px-5 py-2.5 bg-white/10 rounded-full border border-white/20
-         text-[10px] tracking-[0.15em] font-normal uppercase hover:bg-white hover:text-black 
-         transition-all duration-300;
-}
-
-.project-link {
+.project-link, .social-link {
   @apply block p-4 bg-white/10 rounded-xl border border-white/20 font-normal 
          text-[10px] tracking-[0.15em] uppercase transition-all hover:bg-white 
-         hover:text-black hover:pl-6;
+         hover:text-black;
 }
-
-@keyframes underwater {
-  0% { background-position: 50% 50%; }
-  50% { background-position: 51% 49%; }
-  100% { background-position: 50% 50%; }
-}
-body { animation: underwater 20s ease-in-out infinite; }

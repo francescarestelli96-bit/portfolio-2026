@@ -70,48 +70,48 @@ export default function Home() {
   const activeBox = currentBoxes.find(b => b.id === selectedBox);
 
   return (
-    <main className="min-h-screen w-screen flex flex-col items-center justify-center p-6 md:p-12 relative">
-      <div className="absolute top-8 right-8 z-20">
+    <main className="min-h-screen w-screen flex flex-col items-center justify-center p-4 md:p-12 relative">
+      <div className="absolute top-6 right-6 md:top-8 md:right-8 z-20">
         <button onClick={() => setLang(lang === 'it' ? 'en' : 'it')} className="lang-switch">
           {lang === 'it' ? 'EN' : 'IT'}
         </button>
       </div>
 
-      <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-fr md:h-[550px]">
+      <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-fr md:h-[550px] mt-16 md:mt-0">
         {currentBoxes.map((box) => (
           <div key={box.id} onClick={() => setSelectedBox(box.id)}
             className={`${box.id <= 4 ? 'md:col-span-1 md:row-span-2' : 'md:col-span-2 md:row-span-1'} 
-              ${box.color} bento-card rounded-[2.5rem] p-8 flex flex-col justify-between cursor-pointer group`}
+              ${box.color} bento-card rounded-[2.5rem] p-6 md:p-8 flex flex-col justify-between cursor-pointer group h-40 md:h-auto`}
           >
-            <h2 className="text-xl font-light tracking-widest uppercase text-white">{box.title}</h2>
-            <div className="text-4xl group-hover:scale-110 transition-all duration-500 opacity-90">{box.emoji}</div>
-            <p className="text-[9px] font-bold tracking-[0.3em] text-white/50 uppercase leading-none">{box.sub}</p>
+            <h2 className="text-lg md:text-xl font-light tracking-widest uppercase text-white">{box.title}</h2>
+            <div className="text-3xl md:text-4xl group-hover:scale-110 transition-all duration-500 opacity-90">{box.emoji}</div>
+            <p className="text-[8px] md:text-[9px] font-bold tracking-[0.3em] text-white/50 uppercase leading-none">{box.sub}</p>
           </div>
         ))}
       </div>
 
       {selectedBox && activeBox && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xl" onClick={() => setSelectedBox(null)}>
-          <div className="bg-[#112240]/90 border border-white/10 backdrop-blur-2xl rounded-[3rem] p-10 md:p-14 max-w-3xl w-full relative" onClick={(e) => e.stopPropagation()}>
-            <button onClick={() => setSelectedBox(null)} className="absolute top-8 right-8 text-white/20 hover:text-white text-3xl">✕</button>
-            <div className="mb-8">
-                <span className="text-5xl mb-4 block">{activeBox.emoji}</span>
-                <h3 className="text-3xl font-light tracking-widest text-white uppercase">{activeBox.title}</h3>
-                <p className="text-[10px] font-bold tracking-[0.4em] text-white/30 uppercase mt-2">{activeBox.sub}</p>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-xl" onClick={() => setSelectedBox(null)}>
+          <div className="bg-[#112240]/95 border border-white/20 backdrop-blur-2xl rounded-[2.5rem] p-8 md:p-14 max-w-3xl w-full modal-content relative" onClick={(e) => e.stopPropagation()}>
+            <button onClick={() => setSelectedBox(null)} className="absolute top-6 right-6 text-white/40 hover:text-white text-2xl">✕</button>
+            <div className="mb-6">
+                <span className="text-4xl mb-4 block">{activeBox.emoji}</span>
+                <h3 className="text-2xl md:text-3xl font-light tracking-widest text-white uppercase">{activeBox.title}</h3>
+                <p className="text-[9px] font-bold tracking-[0.4em] text-white/30 uppercase mt-2">{activeBox.sub}</p>
             </div>
-            <p className="text-white/80 leading-relaxed mb-10 text-xl font-light">{activeBox.text}</p>
+            <p className="text-white/90 leading-relaxed mb-8 text-base md:text-xl font-light">{activeBox.text}</p>
             {activeBox.projects && (
               <div className="grid gap-3">{activeBox.projects.map((p, i) => <a key={i} href={p.url} target="_blank" rel="noopener noreferrer" className="project-link">/ {p.name}</a>)}</div>
             )}
             {activeBox.socials && (
-              <div className="flex flex-wrap gap-4">{activeBox.socials.map((s, i) => <a key={i} href={s.url} target="_blank" rel="noopener noreferrer" className="social-link">{s.name}</a>)}</div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">{activeBox.socials.map((s, i) => <a key={i} href={s.url} target="_blank" rel="noopener noreferrer" className="social-link text-center">{s.name}</a>)}</div>
             )}
           </div>
         </div>
       )}
 
-      <footer className="mt-16 border-t border-white/5 pt-8 w-full max-w-5xl flex justify-center">
-        <p className="text-[9px] tracking-[2em] uppercase font-bold text-white/10 ml-[2em]">FR / 2026</p>
+      <footer className="mt-12 md:mt-16 border-t border-white/5 pt-8 w-full max-w-5xl flex justify-center">
+        <p className="text-[8px] md:text-[9px] tracking-[1.5em] md:tracking-[2em] uppercase font-bold text-white/10 ml-[1.5em] md:ml-[2em]">FR / 2026</p>
       </footer>
     </main>
   );
