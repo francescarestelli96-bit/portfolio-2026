@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;800&display=swap');
 @import "tailwindcss";
 
 html, body {
@@ -12,62 +12,62 @@ html, body {
   background-position: center;
   background-attachment: fixed;
   color: #ffffff;
-  font-family: 'Inter', sans-serif; /* Font più professionale */
+  font-family: 'Plus Jakarta Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Effetto Vetro con Riflesso Superiore */
+/* Glassmorphism 2.0: Riflessi e Trasparenze */
 .bento-card {
   backdrop-filter: blur(18px) saturate(160%);
   -webkit-backdrop-filter: blur(18px) saturate(160%);
+  /* Bordo sfumato per simulare il riflesso della luce */
   border: 1px solid rgba(255, 255, 255, 0.15);
-  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
-  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-  position: relative;
-  overflow: hidden;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* Effetto bagliore al passaggio del mouse */
+/* Micro-interazione al passaggio del mouse */
 .bento-card:hover {
-  transform: translateY(-8px) scale(1.01);
-  border-color: rgba(255, 255, 255, 0.4);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  transform: translateY(-12px) scale(1.02);
+  border-color: rgba(255, 255, 255, 0.45);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
 }
 
-/* Palette Colori Desaturati (Più Eleganti) */
-.card-navy { background-color: rgba(15, 23, 42, 0.75); }
-.card-forest { background-color: rgba(20, 35, 30, 0.75); }
-.card-rose { background-color: rgba(50, 20, 30, 0.75); }
-.card-purple { background-color: rgba(35, 25, 60, 0.75); }
-.card-petrol { background-color: rgba(10, 45, 55, 0.75); }
+/* Colori vibranti ma profondi */
+.card-navy { background-color: rgba(15, 23, 42, 0.55); }
+.card-forest { background-color: rgba(20, 35, 30, 0.55); }
+.card-rose { background-color: rgba(60, 20, 35, 0.55); }
+.card-purple { background-color: rgba(45, 20, 70, 0.55); }
+.card-petrol { background-color: rgba(10, 45, 60, 0.55); }
 .card-projects { 
-  background-color: rgba(20, 20, 25, 0.9); 
+  background-color: rgba(20, 20, 25, 0.8); 
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* UI Elements */
+/* Pulsanti e Link coordinati */
 .lang-switch {
   @apply border border-white/40 bg-white/10 backdrop-blur-xl px-6 py-2 rounded-full 
-         text-[10px] tracking-[0.2em] font-black uppercase hover:bg-white hover:text-black 
-         transition-all duration-500;
+         text-[10px] tracking-[0.25em] font-black uppercase hover:bg-white hover:text-black 
+         transition-all duration-500 shadow-xl;
 }
 
 .social-link {
   @apply px-6 py-3 bg-white/5 backdrop-blur-md rounded-full border border-white/10
-         text-[10px] tracking-[0.2em] font-bold uppercase hover:bg-white hover:text-black 
+         text-[11px] tracking-[0.2em] font-bold uppercase hover:bg-white hover:text-black 
          transition-all duration-300;
 }
 
 .project-link {
   @apply block p-5 bg-white/5 rounded-2xl border border-white/10 font-bold 
-         text-[10px] tracking-[0.2em] uppercase transition-all hover:bg-white 
+         text-[11px] tracking-[0.2em] uppercase transition-all hover:bg-white 
          hover:text-black hover:pl-8;
 }
 
 @keyframes underwater {
   0% { background-position: 50% 50%; }
-  50% { background-position: 51% 49%; }
+  50% { background-position: 52% 48%; }
   100% { background-position: 50% 50%; }
 }
-
-body { animation: underwater 20s ease-in-out infinite; }
+body { animation: underwater 25s ease-in-out infinite; }
