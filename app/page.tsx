@@ -9,7 +9,7 @@ export default function Home() {
     it: {
       boxes: [
         { id: 1, title: "Ciao", sub: "FRANCESCA RESTELLI", emoji: "👋", color: "card-navy", 
-          text: "Ciao, sono Francesca. Il mio percorso nel mondo tech non è stato lineare, ed è proprio questo il mio punto di forza. Dopo un'esperienza nel settore HR, ho deciso di assecondare la mia vocazione analitica e creativa studiando sviluppo web. Oggi unisco la capacità di comprendere i bisogni delle persone con la precisione tecnica del codice, creando interfacce che non siano solo belle, ma fatte per essere usate." },
+          text: "Ciao, sono Francesca. Il mio percorso nel mondo tech non è stato lineare, ed è proprio questo il mio punto di forza. Contestualmente al mio lavoro e alla mia esperienza nel settore HR, ho deciso di assecondare la mia vocazione analitica e creativa studiando sviluppo web. Oggi unisco la capacità di comprendere i bisogni delle persone con la precisione tecnica del codice, creando interfacce che non siano solo belle, ma fatte per essere usate. E siccome '3 is a magic number', ho aggiunto un terzo pilastro alla mia identità: sono una Content Creator — o, come amo definirmi, una Bikefluencer — nel panorama motociclistico. Melius abundare quam deficere!" },
         { id: 2, title: "Moto", sub: "DUCATI MONSTER 696", emoji: "🏍️", color: "card-rose", 
           text: "La mia Ducati Monster 696 rappresenta il mio equilibrio. Guidare richiede concentrazione, rapidità decisionale e una costante ricerca di armonia tra meccanica e movimento. Porto questa stessa mentalità nel mio lavoro: affrontare le sfide con grinta, risolvere i problemi in tempo reale e non smettere mai di esplorare nuove strade." },
         { id: 3, title: "Progetti", sub: "SELECTED PROJECTS", emoji: "→", color: "card-white", 
@@ -37,11 +37,11 @@ export default function Home() {
     en: {
       boxes: [
         { id: 1, title: "Hello", sub: "FRANCESCA RESTELLI", emoji: "👋", color: "card-navy", 
-          text: "Hi, I’m Francesca. My journey into tech hasn't been linear, and that’s exactly where my strength lies. After a background in HR, I decided to follow my analytical and creative calling by diving into web development. Today, I combine the ability to understand human needs with technical coding precision." },
+          text: "Hi, I’m Francesca. My path into tech hasn't been linear, and that’s exactly my strength. Alongside my HR background, I followed my analytical and creative calling by studying web development. Today, I bridge the gap between human needs and technical precision, creating interfaces that aren't just beautiful, but built to be used. And since '3 is a magic number', I’ve added a third pillar to my identity: I’m a Content Creator — or as I like to call it, a Bikefluencer — in the motorcycling world. Melius abundare quam deficere!" },
         { id: 2, title: "Bike", sub: "DUCATI MONSTER 696", emoji: "🏍️", color: "card-rose", 
-          text: "My Ducati Monster 696 represents my balance. Riding a motorcycle requires focus, quick decision-making, and a constant search for harmony between mechanics and movement. I bring this same mindset to my work: tackling challenges with grit and solving problems in real-time." },
+          text: "My Ducati Monster 696 represents my balance. Riding requires focus, quick decision-making, and a constant search for harmony. I bring this same mindset to my work: tackling challenges with grit and solving problems in real-time." },
         { id: 3, title: "Works", sub: "SELECTED PROJECTS", emoji: "→", color: "card-white", 
-          text: "From frontend development with React and Next.js to managing databases and APIs. Here you'll find a collection of projects written with a clear goal: optimizing performance without ever sacrificing user experience.",
+          text: "From frontend development to API management. Here's a collection of projects focused on performance and user experience.",
           projects: [
             { name: "Ridescape", url: "https://github.com/francescarestelli96-bit/ridescape" },
             { name: "Alberto Chines Site", url: "https://github.com/francescarestelli96-bit/albertochines-site" },
@@ -49,9 +49,9 @@ export default function Home() {
           ]
         },
         { id: 4, title: "Tech+HR", sub: "HR TO DEVELOPER", emoji: "👩‍💻", color: "card-forest", 
-          text: "For years, I worked with people, scouting talent and understanding corporate dynamics. This gave me a unique perspective: I know that behind every software, there is a user with a need. Core skills: JS, React, Next.js, Tailwind." },
+          text: "Years of HR experience gave me a unique perspective: I know there's a user with a need behind every software. Core skills: JS, React, Next.js, Tailwind." },
         { id: 5, title: "Contact", sub: "AVAILABLE NOW", emoji: "💌", color: "card-purple", 
-          text: "I am currently available for new opportunities or freelance collaborations. Find me on LinkedIn, via email, or if you’re in Milan, over a coffee (or a bike ride!). Reach me here:",
+          text: "Currently available for new opportunities or freelance collaborations. Let's talk!",
           socials: [
             { name: "Email", url: "mailto:francesres@icloud.com" },
             { name: "LinkedIn", url: "https://www.linkedin.com/in/francesca-restelli-413b6376" },
@@ -59,7 +59,7 @@ export default function Home() {
           ]
         },
         { id: 6, title: "About", sub: "MILAN, ITALY", emoji: "🇮🇹", color: "card-petrol", 
-          text: "I believe in 'less is more'. My approach is based on removing the superfluous to let the essential shine. I live in Milan, a city that constantly inspires me with its mix of design and innovation." }
+          text: "I believe in 'less is more'. My approach is based on removing the superfluous to let the essential shine. Based in Milan, inspired by design and innovation." }
       ]
     }
   };
@@ -69,14 +69,12 @@ export default function Home() {
 
   return (
     <main className="min-h-screen w-screen flex flex-col items-center justify-center p-6 md:p-16">
-      {/* Switch Lingua Bordato */}
       <div className="absolute top-10 right-10 z-10">
         <button onClick={() => setLang(lang === 'it' ? 'en' : 'it')} className="lang-switch">
           {lang === 'it' ? 'Switch to English' : 'Passa in Italiano'}
         </button>
       </div>
 
-      {/* Grid Bento */}
       <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-fr md:h-[550px]">
         {currentBoxes.map((box) => (
           <div key={box.id} onClick={() => setSelectedBox(box.id)}
@@ -90,7 +88,6 @@ export default function Home() {
         ))}
       </div>
 
-      {/* Modale con testi ricchi */}
       {selectedBox && activeBox && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-xl" onClick={() => setSelectedBox(null)}>
           <div className="bg-[#112240] border border-white/10 rounded-[3rem] p-10 md:p-14 max-w-2xl w-full relative shadow-2xl" onClick={(e) => e.stopPropagation()}>
@@ -111,7 +108,6 @@ export default function Home() {
         </div>
       )}
 
-      {/* Footer visibile e bianco */}
       <footer className="mt-16 border-t border-white/5 pt-8 w-full max-w-5xl flex justify-center">
         <p className="text-[9px] tracking-[2.5em] uppercase font-bold text-white ml-[2.5em]">FR / PORTFOLIO 2026</p>
       </footer>
