@@ -23,10 +23,11 @@ export default function Home() {
         { id: 4, title: "Tech+HR", sub: "HR TO DEVELOPER", emoji: "👩‍💻", color: "card-forest", 
           text: "Per anni ho lavorato con le persone, selezionando talenti e comprendendo le dinamiche aziendali. Questo mi ha dato una prospettiva unica: so che dietro ogni software c'è un utente con una necessità. Skill principali: JavaScript (ES6+), React, Next.js, Tailwind CSS e Git." },
         { id: 5, title: "Contact", sub: "AVAILABLE NOW", emoji: "💌", color: "card-purple", 
-          text: "Sono attualmente disponibile per nuove opportunità o collaborazioni freelance. Che tu abbia un progetto già avviato o solo un'idea su un tovagliolo di carta, mi piacerebbe parlarne. Puoi trovarmi qui:",
+          text: "Sono attualmente disponibile per nuove opportunità o collaborazioni freelance. Puoi trovarmi qui:",
           socials: [
             { name: "Email", url: "mailto:francesres@icloud.com" },
             { name: "LinkedIn", url: "https://www.linkedin.com/in/francesca-restelli-413b6376" },
+            { name: "Instagram", url: "https://www.instagram.com/francescarestelli" }, // AGGIUNTO!
             { name: "GitHub", url: "https://github.com/francescarestelli96-bit" }
           ]
         },
@@ -51,10 +52,11 @@ export default function Home() {
         { id: 4, title: "Tech+HR", sub: "HR TO DEVELOPER", emoji: "👩‍💻", color: "card-forest", 
           text: "Years of HR experience gave me a unique perspective: I know there's a user with a need behind every software. Core skills: JS, React, Next.js, Tailwind." },
         { id: 5, title: "Contact", sub: "AVAILABLE NOW", emoji: "💌", color: "card-purple", 
-          text: "Currently available for new opportunities or freelance collaborations. Let's talk!",
+          text: "Currently available for new opportunities or freelance collaborations. Find me here:",
           socials: [
             { name: "Email", url: "mailto:francesres@icloud.com" },
             { name: "LinkedIn", url: "https://www.linkedin.com/in/francesca-restelli-413b6376" },
+            { name: "Instagram", url: "https://www.instagram.com/francescarestelli" }, // AGGIUNTO!
             { name: "GitHub", url: "https://github.com/francescarestelli96-bit" }
           ]
         },
@@ -68,14 +70,15 @@ export default function Home() {
   const activeBox = currentBoxes.find(b => b.id === selectedBox);
 
   return (
-    <main className="min-h-screen w-screen flex flex-col items-center justify-center p-6 md:p-16">
-      <div className="absolute top-10 right-10 z-10">
+    <main className="min-h-screen w-screen flex flex-col items-center justify-center p-6 md:p-16 relative">
+      {/* Switch Lingua - Spostato più in alto e a destra per non coprire i box */}
+      <div className="absolute top-6 right-6 md:top-10 md:right-10 z-20">
         <button onClick={() => setLang(lang === 'it' ? 'en' : 'it')} className="lang-switch">
-          {lang === 'it' ? 'Switch to English' : 'Passa in Italiano'}
+          {lang === 'it' ? 'EN' : 'IT'}
         </button>
       </div>
 
-      <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-fr md:h-[550px]">
+      <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-fr md:h-[550px] mt-12 md:mt-0">
         {currentBoxes.map((box) => (
           <div key={box.id} onClick={() => setSelectedBox(box.id)}
             className={`${box.id <= 4 ? 'md:col-span-1 md:row-span-2' : 'md:col-span-2 md:row-span-1'} 
@@ -99,10 +102,10 @@ export default function Home() {
             </div>
             <p className="text-white/80 leading-relaxed mb-10 text-lg font-light">{activeBox.text}</p>
             {activeBox.projects && (
-              <div className="grid gap-3">{activeBox.projects.map((p, i) => <a key={i} href={p.url} target="_blank" className="project-link">/ {p.name}</a>)}</div>
+              <div className="grid gap-3">{activeBox.projects.map((p, i) => <a key={i} href={p.url} target="_blank" rel="noopener noreferrer" className="project-link">/ {p.name}</a>)}</div>
             )}
             {activeBox.socials && (
-              <div className="flex flex-wrap gap-3">{activeBox.socials.map((s, i) => <a key={i} href={s.url} target="_blank" className="social-link">{s.name}</a>)}</div>
+              <div className="flex flex-wrap gap-3">{activeBox.socials.map((s, i) => <a key={i} href={s.url} target="_blank" rel="noopener noreferrer" className="social-link">{s.name}</a>)}</div>
             )}
           </div>
         </div>
