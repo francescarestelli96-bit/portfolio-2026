@@ -27,7 +27,7 @@ export default function Home() {
           socials: [
             { name: "Email", url: "mailto:francesres@icloud.com" },
             { name: "LinkedIn", url: "https://www.linkedin.com/in/francesca-restelli-413b6376" },
-            { name: "Instagram", url: "https://www.instagram.com/francescarestelli" }, // AGGIUNTO!
+            { name: "Instagram", url: "https://www.instagram.com/francescarestelli" },
             { name: "GitHub", url: "https://github.com/francescarestelli96-bit" }
           ]
         },
@@ -56,7 +56,7 @@ export default function Home() {
           socials: [
             { name: "Email", url: "mailto:francesres@icloud.com" },
             { name: "LinkedIn", url: "https://www.linkedin.com/in/francesca-restelli-413b6376" },
-            { name: "Instagram", url: "https://www.instagram.com/francescarestelli" }, // AGGIUNTO!
+            { name: "Instagram", url: "https://www.instagram.com/francescarestelli" },
             { name: "GitHub", url: "https://github.com/francescarestelli96-bit" }
           ]
         },
@@ -71,13 +71,14 @@ export default function Home() {
 
   return (
     <main className="min-h-screen w-screen flex flex-col items-center justify-center p-6 md:p-16 relative">
-      {/* Switch Lingua - Spostato più in alto e a destra per non coprire i box */}
+      {/* Switch Lingua */}
       <div className="absolute top-6 right-6 md:top-10 md:right-10 z-20">
         <button onClick={() => setLang(lang === 'it' ? 'en' : 'it')} className="lang-switch">
           {lang === 'it' ? 'EN' : 'IT'}
         </button>
       </div>
 
+      {/* Grid Bento */}
       <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-fr md:h-[550px] mt-12 md:mt-0">
         {currentBoxes.map((box) => (
           <div key={box.id} onClick={() => setSelectedBox(box.id)}
@@ -86,14 +87,15 @@ export default function Home() {
           >
             <h2 className="text-xl md:text-2xl font-light tracking-[0.1em] uppercase">{box.title}</h2>
             <div className="text-4xl opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500">{box.emoji}</div>
-            <p className="text-[9px] font-bold tracking-[0.3em] text-white uppercase">{box.sub}</p>
+            <p className="text-[10px] font-bold tracking-[0.3em] text-white uppercase">{box.sub}</p>
           </div>
         ))}
       </div>
 
+      {/* Modale con effetto Glass estremo */}
       {selectedBox && activeBox && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-xl" onClick={() => setSelectedBox(null)}>
-          <div className="bg-[#112240] border border-white/10 rounded-[3rem] p-10 md:p-14 max-w-2xl w-full relative shadow-2xl" onClick={(e) => e.stopPropagation()}>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-2xl" onClick={() => setSelectedBox(null)}>
+          <div className="bg-white/10 border border-white/20 backdrop-blur-md rounded-[3rem] p-10 md:p-14 max-w-2xl w-full relative shadow-2xl" onClick={(e) => e.stopPropagation()}>
             <button onClick={() => setSelectedBox(null)} className="absolute top-8 right-8 text-white/30 hover:text-white text-xl">✕</button>
             <div className="mb-6">
                 <span className="text-4xl mb-2 block">{activeBox.emoji}</span>
@@ -111,8 +113,9 @@ export default function Home() {
         </div>
       )}
 
-      <footer className="mt-16 border-t border-white/5 pt-8 w-full max-w-5xl flex justify-center">
-        <p className="text-[9px] tracking-[2.5em] uppercase font-bold text-white ml-[2.5em]">FR / PORTFOLIO 2026</p>
+      {/* Footer Bianco Visibile */}
+      <footer className="mt-16 border-t border-white/10 pt-8 w-full max-w-5xl flex justify-center">
+        <p className="text-[10px] tracking-[2.5em] uppercase font-bold text-white ml-[2.5em]">FR / PORTFOLIO 2026</p>
       </footer>
     </main>
   );

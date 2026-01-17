@@ -1,55 +1,71 @@
 @import "tailwindcss";
 
-@theme {
-  --color-navy-bg: #050a15;
-}
-
 html, body {
   margin: 0;
   padding: 0;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   overflow-x: hidden;
-  background-color: #050a15 !important;
+  /* Sfondo Sott'acqua */
+  background-image: url('/underwater.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: #ffffff;
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
+/* Effetto Glassmorphism per i Box */
 .bento-card {
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .bento-card:hover {
   transform: scale(1.02) translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-  border-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
 
-/* Palette Dark Chic - Colori più densi */
-.card-navy { background-color: #112240; }
-.card-forest { background-color: #0c1a1a; }
-.card-rose { background-color: #3d1523; }
-.card-purple { background-color: #2d1b4d; }
-.card-petrol { background-color: #0a2533; }
-.card-white { background-color: #ffffff; color: #050a15; }
+/* Classi Colore Glass (Sostituisci quelle vecchie) */
+.card-navy { background-color: rgba(17, 34, 64, 0.4); }
+.card-forest { background-color: rgba(12, 26, 26, 0.4); }
+.card-rose { background-color: rgba(61, 21, 35, 0.4); }
+.card-purple { background-color: rgba(45, 27, 77, 0.4); }
+.card-petrol { background-color: rgba(10, 37, 51, 0.4); }
+.card-white { background-color: rgba(255, 255, 255, 0.8); color: #050a15; }
 
-/* Switch Lingua con riquadro */
+/* Switch Lingua */
 .lang-switch {
-  @apply border border-white/20 bg-white/5 backdrop-blur-md px-6 py-2 rounded-full 
+  @apply border border-white/30 bg-white/10 backdrop-blur-md px-6 py-2 rounded-full 
          text-[10px] tracking-[0.2em] text-white hover:bg-white hover:text-black 
          transition-all duration-300 font-bold uppercase;
 }
 
+/* Social e Link con effetto vetro */
 .social-link {
-  @apply flex items-center justify-center gap-2 px-6 py-3 bg-white/10 rounded-full 
+  @apply flex items-center justify-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-md rounded-full 
          font-bold text-[10px] tracking-[0.2em] uppercase hover:bg-white hover:text-[#050a15] 
          transition-all duration-300 border border-white/20;
 }
 
 .project-link {
-  @apply block p-5 bg-white/5 rounded-2xl border border-white/10 font-bold text-white 
+  @apply block p-5 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 font-bold text-white 
          text-[10px] tracking-[0.2em] uppercase transition-all hover:bg-white 
          hover:text-[#050a15] hover:pl-8;
+}
+
+/* Animazione sottile per simulare l'acqua */
+@keyframes underwater {
+  0% { background-position: center; }
+  50% { background-position: 51% 49%; }
+  100% { background-position: center; }
+}
+
+body {
+  animation: underwater 15s ease-in-out infinite;
 }
