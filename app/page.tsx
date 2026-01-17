@@ -92,9 +92,9 @@ export default function Home() {
         ))}
       </div>
 
-      {/* Modale con effetto Glass estremo */}
+      {/* Modale Glass */}
       {selectedBox && activeBox && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-2xl" onClick={() => setSelectedBox(null)}>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-2xl" onClick={() => setSelectedBox(null)}>
           <div className="bg-white/10 border border-white/20 backdrop-blur-md rounded-[3rem] p-10 md:p-14 max-w-2xl w-full relative shadow-2xl" onClick={(e) => e.stopPropagation()}>
             <button onClick={() => setSelectedBox(null)} className="absolute top-8 right-8 text-white/30 hover:text-white text-xl">✕</button>
             <div className="mb-6">
