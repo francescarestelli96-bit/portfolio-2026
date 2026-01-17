@@ -16,47 +16,41 @@ html, body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Glassmorphism Sottile e Fine */
 .bento-card {
-  backdrop-filter: blur(12px) saturate(140%);
-  -webkit-backdrop-filter: blur(12px) saturate(140%);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.5s cubic-bezier(0.2, 0, 0, 1);
 }
 
 .bento-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(255, 255, 255, 0.3);
-  background: rgba(255, 255, 255, 0.07);
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 15px 35px rgba(255, 255, 255, 0.1);
 }
 
-/* Colori Desaturati e Scuri (Effetto Profondità) */
-.card-navy { background-color: rgba(15, 25, 40, 0.6); }
-.card-forest { background-color: rgba(18, 28, 25, 0.6); }
-.card-rose { background-color: rgba(45, 25, 30, 0.6); }
-.card-purple { background-color: rgba(30, 20, 45, 0.6); }
-.card-petrol { background-color: rgba(12, 35, 45, 0.6); }
-.card-projects { 
-  background-color: rgba(20, 20, 22, 0.8); 
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
+/* Colori Brillanti e Vibranti */
+.card-navy { background-color: rgba(30, 100, 255, 0.45); }     /* Blue Elettrico */
+.card-rose { background-color: rgba(255, 40, 100, 0.45); }    /* Rosa Vibrante */
+.card-projects { background-color: rgba(60, 60, 70, 0.6); }    /* Grigio Fumo Brillante */
+.card-forest { background-color: rgba(0, 220, 150, 0.4); }    /* Smeraldo Brillante */
+.card-purple { background-color: rgba(180, 50, 255, 0.45); }  /* Viola Neon */
+.card-petrol { background-color: rgba(0, 180, 220, 0.45); }   /* Turchese Brillante */
 
-/* UI Elements fini */
 .lang-switch {
-  @apply border border-white/20 bg-white/5 backdrop-blur-md px-4 py-1.5 rounded-full 
+  @apply border border-white/30 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full 
          text-[9px] tracking-[0.2em] font-medium uppercase hover:bg-white hover:text-black 
          transition-all duration-300;
 }
 
 .social-link {
-  @apply px-5 py-2.5 bg-white/5 rounded-full border border-white/10
+  @apply px-5 py-2.5 bg-white/10 rounded-full border border-white/20
          text-[10px] tracking-[0.15em] font-normal uppercase hover:bg-white hover:text-black 
          transition-all duration-300;
 }
 
 .project-link {
-  @apply block p-4 bg-white/5 rounded-xl border border-white/10 font-normal 
+  @apply block p-4 bg-white/10 rounded-xl border border-white/20 font-normal 
          text-[10px] tracking-[0.15em] uppercase transition-all hover:bg-white 
          hover:text-black hover:pl-6;
 }

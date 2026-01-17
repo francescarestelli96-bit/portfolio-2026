@@ -80,20 +80,19 @@ export default function Home() {
       <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-fr md:h-[550px]">
         {currentBoxes.map((box) => (
           <div key={box.id} onClick={() => setSelectedBox(box.id)}
-            className={`${box.id === 1 || box.id === 3 ? 'md:col-span-1 md:row-span-2' : 'md:col-span-1 md:row-span-1'} 
-              ${box.id === 5 || box.id === 6 ? 'md:col-span-2' : ''}
+            className={`${box.id <= 4 ? 'md:col-span-1 md:row-span-2' : 'md:col-span-2 md:row-span-1'} 
               ${box.color} bento-card rounded-[2.5rem] p-8 flex flex-col justify-between cursor-pointer group`}
           >
             <h2 className="text-xl font-light tracking-widest uppercase text-white">{box.title}</h2>
-            <div className="text-4xl group-hover:scale-110 transition-all duration-500 opacity-80">{box.emoji}</div>
-            <p className="text-[9px] font-bold tracking-[0.3em] text-white/40 uppercase leading-none">{box.sub}</p>
+            <div className="text-4xl group-hover:scale-110 transition-all duration-500 opacity-90">{box.emoji}</div>
+            <p className="text-[9px] font-bold tracking-[0.3em] text-white/50 uppercase leading-none">{box.sub}</p>
           </div>
         ))}
       </div>
 
       {selectedBox && activeBox && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xl" onClick={() => setSelectedBox(null)}>
-          <div className="bg-[#112240]/80 border border-white/10 backdrop-blur-2xl rounded-[3rem] p-10 md:p-14 max-w-3xl w-full relative" onClick={(e) => e.stopPropagation()}>
+          <div className="bg-[#112240]/90 border border-white/10 backdrop-blur-2xl rounded-[3rem] p-10 md:p-14 max-w-3xl w-full relative" onClick={(e) => e.stopPropagation()}>
             <button onClick={() => setSelectedBox(null)} className="absolute top-8 right-8 text-white/20 hover:text-white text-3xl">✕</button>
             <div className="mb-8">
                 <span className="text-5xl mb-4 block">{activeBox.emoji}</span>
