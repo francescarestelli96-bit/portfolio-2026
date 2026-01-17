@@ -8,58 +8,58 @@ export default function Home() {
   const content = {
     it: {
       boxes: [
-        { id: 1, title: "Profilo", sub: "FRANCESCA RESTELLI", emoji: "👤", color: "card-navy", 
-          text: "Professionista HR con la passione per il Web Development. Unisco sensibilità umana e precisione tecnica per creare soluzioni digitali human-centered." },
-        { id: 2, title: "Passione", sub: "DUCATI MONSTER 696", emoji: "🏍️", color: "card-rose", 
-          text: "Equilibrio, rapidità e focus. La mentalità che porto in sella è la stessa che applico al codice: risolvere problemi complessi con determinazione." },
-        { id: 3, title: "Portfolio", sub: "SELECTED WORKS", emoji: "→", color: "card-white", 
-          text: "Una selezione di progetti focalizzati su performance ed estetica minimale.",
+        { id: 1, title: "Ciao", sub: "FRANCESCA RESTELLI", emoji: "👋", color: "card-navy", 
+          text: "Ciao, sono Francesca. Il mio percorso nel mondo tech non è stato lineare, ed è proprio questo il mio punto di forza. Dopo un'esperienza nel settore HR, ho deciso di assecondare la mia vocazione analitica e creativa studiando sviluppo web. Oggi unisco la capacità di comprendere i bisogni delle persone con la precisione tecnica del codice, creando interfacce che non siano solo belle, ma fatte per essere usate." },
+        { id: 2, title: "Moto", sub: "DUCATI MONSTER 696", emoji: "🏍️", color: "card-rose", 
+          text: "La mia Ducati Monster 696 rappresenta il mio equilibrio. Guidare richiede concentrazione, rapidità decisionale e una costante ricerca di armonia tra meccanica e movimento. Porto questa stessa mentalità nel mio lavoro: affrontare le sfide con grinta, risolvere i problemi in tempo reale e non smettere mai di esplorare nuove strade." },
+        { id: 3, title: "Progetti", sub: "SELECTED PROJECTS", emoji: "→", color: "card-white", 
+          text: "Dallo sviluppo frontend con React e Next.js alla gestione di database e API. In questa sezione troverai una raccolta di progetti focalizzati su performance ed esperienza utente.",
           projects: [
             { name: "Ridescape", url: "https://github.com/francescarestelli96-bit/ridescape" },
             { name: "Alberto Chines Site", url: "https://github.com/francescarestelli96-bit/albertochines-site" },
             { name: "Relax Room", url: "https://github.com/francescarestelli96-bit/relax-room" }
           ]
         },
-        { id: 4, title: "Tech Stack", sub: "DEVELOPMENT", emoji: "💻", color: "card-forest", 
-          text: "JavaScript, React, Next.js, Tailwind CSS. Costruisco interfacce moderne e scalabili." },
-        { id: 5, title: "Contatti", sub: "GET IN TOUCH", emoji: "📩", color: "card-purple", 
-          text: "Disponibile per collaborazioni e progetti innovativi.",
+        { id: 4, title: "Tech+HR", sub: "HR TO DEVELOPER", emoji: "👩‍💻", color: "card-forest", 
+          text: "Per anni ho lavorato con le persone, selezionando talenti e comprendendo le dinamiche aziendali. Questo mi ha dato una prospettiva unica: so che dietro ogni software c'è un utente con una necessità. Skill principali: JavaScript (ES6+), React, Next.js, Tailwind CSS e Git." },
+        { id: 5, title: "Contact", sub: "AVAILABLE NOW", emoji: "💌", color: "card-purple", 
+          text: "Sono attualmente disponibile per nuove opportunità o collaborazioni freelance. Che tu abbia un progetto già avviato o solo un'idea su un tovagliolo di carta, mi piacerebbe parlarne. Puoi trovarmi qui:",
           socials: [
             { name: "Email", url: "mailto:francesres@icloud.com" },
             { name: "LinkedIn", url: "https://www.linkedin.com/in/francesca-restelli-413b6376" },
             { name: "GitHub", url: "https://github.com/francescarestelli96-bit" }
           ]
         },
-        { id: 6, title: "Vision", sub: "MILAN, IT", emoji: "✨", color: "card-petrol", 
-          text: "Credo nel design invisibile: quello che funziona così bene da non farsi notare. Less is more." }
+        { id: 6, title: "About", sub: "MILAN, ITALY", emoji: "🇮🇹", color: "card-petrol", 
+          text: "Credo nel 'less is more'. Il mio approccio al design e allo sviluppo si basa sulla sottrazione del superfluo per far emergere l'essenziale. Vivo a Milano, una città che mi ispira continuamente con il suo mix di design storico e innovazione tecnologica." }
       ]
     },
     en: {
       boxes: [
-        { id: 1, title: "Profile", sub: "FRANCESCA RESTELLI", emoji: "👤", color: "card-navy", 
-          text: "HR Professional with a passion for Web Development. Combining human insight with technical precision." },
-        { id: 2, title: "Passion", sub: "DUCATI MONSTER 696", emoji: "🏍️", color: "card-rose", 
-          text: "Balance and focus. The same mindset I use on my bike is what I apply to my code." },
-        { id: 3, title: "Portfolio", sub: "SELECTED WORKS", emoji: "→", color: "card-white", 
-          text: "Selected projects focused on performance and minimalist aesthetics.",
+        { id: 1, title: "Hello", sub: "FRANCESCA RESTELLI", emoji: "👋", color: "card-navy", 
+          text: "Hi, I’m Francesca. My journey into tech hasn't been linear, and that’s exactly where my strength lies. After a background in HR, I decided to follow my analytical and creative calling by diving into web development. Today, I combine the ability to understand human needs with technical coding precision." },
+        { id: 2, title: "Bike", sub: "DUCATI MONSTER 696", emoji: "🏍️", color: "card-rose", 
+          text: "My Ducati Monster 696 represents my balance. Riding a motorcycle requires focus, quick decision-making, and a constant search for harmony between mechanics and movement. I bring this same mindset to my work: tackling challenges with grit and solving problems in real-time." },
+        { id: 3, title: "Works", sub: "SELECTED PROJECTS", emoji: "→", color: "card-white", 
+          text: "From frontend development with React and Next.js to managing databases and APIs. Here you'll find a collection of projects written with a clear goal: optimizing performance without ever sacrificing user experience.",
           projects: [
             { name: "Ridescape", url: "https://github.com/francescarestelli96-bit/ridescape" },
             { name: "Alberto Chines Site", url: "https://github.com/francescarestelli96-bit/albertochines-site" },
             { name: "Relax Room", url: "https://github.com/francescarestelli96-bit/relax-room" }
           ]
         },
-        { id: 4, title: "Tech Stack", sub: "DEVELOPMENT", emoji: "💻", color: "card-forest", 
-          text: "JavaScript, React, Next.js, Tailwind CSS. Building modern and scalable interfaces." },
-        { id: 5, title: "Contact", sub: "GET IN TOUCH", emoji: "📩", color: "card-purple", 
-          text: "Available for collaborations and innovative projects.",
+        { id: 4, title: "Tech+HR", sub: "HR TO DEVELOPER", emoji: "👩‍💻", color: "card-forest", 
+          text: "For years, I worked with people, scouting talent and understanding corporate dynamics. This gave me a unique perspective: I know that behind every software, there is a user with a need. Core skills: JS, React, Next.js, Tailwind." },
+        { id: 5, title: "Contact", sub: "AVAILABLE NOW", emoji: "💌", color: "card-purple", 
+          text: "I am currently available for new opportunities or freelance collaborations. Find me on LinkedIn, via email, or if you’re in Milan, over a coffee (or a bike ride!). Reach me here:",
           socials: [
             { name: "Email", url: "mailto:francesres@icloud.com" },
             { name: "LinkedIn", url: "https://www.linkedin.com/in/francesca-restelli-413b6376" },
             { name: "GitHub", url: "https://github.com/francescarestelli96-bit" }
           ]
         },
-        { id: 6, title: "Vision", sub: "MILAN, IT", emoji: "✨", color: "card-petrol", 
-          text: "I believe in invisible design: what works so well it goes unnoticed. Less is more." }
+        { id: 6, title: "About", sub: "MILAN, ITALY", emoji: "🇮🇹", color: "card-petrol", 
+          text: "I believe in 'less is more'. My approach is based on removing the superfluous to let the essential shine. I live in Milan, a city that constantly inspires me with its mix of design and innovation." }
       ]
     }
   };
@@ -69,43 +69,51 @@ export default function Home() {
 
   return (
     <main className="min-h-screen w-screen flex flex-col items-center justify-center p-6 md:p-16">
+      {/* Switch Lingua Bordato */}
       <div className="absolute top-10 right-10 z-10">
-        <button onClick={() => setLang(lang === 'it' ? 'en' : 'it')} className="text-[10px] tracking-[0.3em] text-white/30 hover:text-white transition-colors">
-          {lang === 'it' ? 'ENGLISH' : 'ITALIANO'}
+        <button onClick={() => setLang(lang === 'it' ? 'en' : 'it')} className="lang-switch">
+          {lang === 'it' ? 'Switch to English' : 'Passa in Italiano'}
         </button>
       </div>
 
-      <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-fr md:h-[500px]">
+      {/* Grid Bento */}
+      <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-fr md:h-[550px]">
         {currentBoxes.map((box) => (
           <div key={box.id} onClick={() => setSelectedBox(box.id)}
             className={`${box.id <= 4 ? 'md:col-span-1 md:row-span-2' : 'md:col-span-2 md:row-span-1'} 
               ${box.color} bento-card rounded-[2.5rem] p-8 flex flex-col justify-between cursor-pointer group shadow-2xl`}
           >
-            <h2 className="text-xl font-light tracking-[0.15em] uppercase">{box.title}</h2>
-            <div className="text-3xl opacity-20 group-hover:opacity-100 transition-opacity duration-700">{box.emoji}</div>
-            <p className="text-[8px] font-bold tracking-[0.4em] opacity-20 uppercase">{box.sub}</p>
+            <h2 className="text-xl md:text-2xl font-light tracking-[0.1em] uppercase">{box.title}</h2>
+            <div className="text-4xl opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500">{box.emoji}</div>
+            <p className="text-[9px] font-bold tracking-[0.3em] text-white uppercase">{box.sub}</p>
           </div>
         ))}
       </div>
 
+      {/* Modale con testi ricchi */}
       {selectedBox && activeBox && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md" onClick={() => setSelectedBox(null)}>
-          <div className="bg-[#112240] border border-white/5 rounded-[3rem] p-12 max-w-xl w-full relative shadow-2xl" onClick={(e) => e.stopPropagation()}>
-            <button onClick={() => setSelectedBox(null)} className="absolute top-8 right-8 text-white/10 hover:text-white">✕</button>
-            <h3 className="text-3xl font-light mb-2 tracking-tight">{activeBox.title}</h3>
-            <p className="text-white/40 leading-relaxed mb-10 text-lg font-light">{activeBox.text}</p>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-xl" onClick={() => setSelectedBox(null)}>
+          <div className="bg-[#112240] border border-white/10 rounded-[3rem] p-10 md:p-14 max-w-2xl w-full relative shadow-2xl" onClick={(e) => e.stopPropagation()}>
+            <button onClick={() => setSelectedBox(null)} className="absolute top-8 right-8 text-white/30 hover:text-white text-xl">✕</button>
+            <div className="mb-6">
+                <span className="text-4xl mb-2 block">{activeBox.emoji}</span>
+                <h3 className="text-3xl font-light tracking-tight">{activeBox.title}</h3>
+                <p className="text-[10px] font-bold tracking-[0.3em] text-white/60 uppercase mt-1">{activeBox.sub}</p>
+            </div>
+            <p className="text-white/80 leading-relaxed mb-10 text-lg font-light">{activeBox.text}</p>
             {activeBox.projects && (
-              <div className="grid gap-3">{activeBox.projects.map((p, i) => <a key={i} href={p.url} className="project-link">/ {p.name}</a>)}</div>
+              <div className="grid gap-3">{activeBox.projects.map((p, i) => <a key={i} href={p.url} target="_blank" className="project-link">/ {p.name}</a>)}</div>
             )}
             {activeBox.socials && (
-              <div className="flex flex-wrap gap-3">{activeBox.socials.map((s, i) => <a key={i} href={s.url} className="social-link">{s.name}</a>)}</div>
+              <div className="flex flex-wrap gap-3">{activeBox.socials.map((s, i) => <a key={i} href={s.url} target="_blank" className="social-link">{s.name}</a>)}</div>
             )}
           </div>
         </div>
       )}
 
-      <footer className="mt-16 opacity-10">
-        <p className="text-[7px] tracking-[2.5em] uppercase font-bold text-white">FR / PORTFOLIO 2026</p>
+      {/* Footer visibile e bianco */}
+      <footer className="mt-16 border-t border-white/5 pt-8 w-full max-w-5xl flex justify-center">
+        <p className="text-[9px] tracking-[2.5em] uppercase font-bold text-white ml-[2.5em]">FR / PORTFOLIO 2026</p>
       </footer>
     </main>
   );
