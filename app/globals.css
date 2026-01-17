@@ -18,24 +18,28 @@ html, body {
 .bento-card {
   backdrop-filter: blur(12px) saturate(180%);
   -webkit-backdrop-filter: blur(12px) saturate(180%);
-  /* Bordo più visibile per staccare dallo sfondo */
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .bento-card:hover {
   transform: scale(1.02) translateY(-5px);
-  border-color: rgba(255, 255, 255, 0.6);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
 }
 
-/* Colori più solidi per non confondersi con l'acqua */
-.card-navy { background-color: rgba(17, 34, 64, 0.8); }
-.card-forest { background-color: rgba(15, 35, 35, 0.8); }
-.card-rose { background-color: rgba(85, 25, 45, 0.8); }
-.card-purple { background-color: rgba(55, 35, 90, 0.8); }
-.card-petrol { background-color: rgba(15, 55, 75, 0.8); }
-.card-white { background-color: rgba(255, 255, 255, 0.95); color: #050a15; }
+/* Palette Aggiornata */
+.card-navy { background-color: rgba(17, 34, 64, 0.85); }
+.card-forest { background-color: rgba(15, 35, 35, 0.85); }
+.card-rose { background-color: rgba(85, 25, 45, 0.85); }
+.card-purple { background-color: rgba(55, 35, 90, 0.85); }
+.card-petrol { background-color: rgba(15, 55, 75, 0.85); }
+
+/* IL CAMBIO: Box Progetti Grigio Scuro Elegante */
+.card-projects { 
+  background-color: rgba(30, 30, 35, 0.9); 
+  color: #ffffff; 
+}
 
 .lang-switch {
   @apply border border-white/50 bg-white/20 backdrop-blur-md px-5 py-2 rounded-full 
@@ -44,23 +48,13 @@ html, body {
 }
 
 .social-link {
-  @apply flex items-center justify-center gap-2 px-6 py-3 bg-white/20 backdrop-blur-md rounded-full 
+  @apply flex items-center justify-center gap-2 px-6 py-3 bg-white/10 rounded-full 
          font-bold text-[10px] tracking-[0.2em] uppercase hover:bg-white hover:text-[#050a15] 
-         transition-all duration-300 border border-white/30;
+         transition-all duration-300 border border-white/20;
 }
 
 .project-link {
-  @apply block p-5 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 font-bold text-white 
+  @apply block p-5 bg-white/5 rounded-2xl border border-white/10 font-bold text-white 
          text-[10px] tracking-[0.2em] uppercase transition-all hover:bg-white 
          hover:text-[#050a15] hover:pl-8;
-}
-
-@keyframes underwater {
-  0% { background-position: 50% 50%; }
-  50% { background-position: 51% 49%; }
-  100% { background-position: 50% 50%; }
-}
-
-body {
-  animation: underwater 15s ease-in-out infinite;
 }

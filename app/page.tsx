@@ -12,7 +12,7 @@ export default function Home() {
           text: "Ciao, sono Francesca. Il mio percorso nel mondo tech non è stato lineare, ed è proprio questo il mio punto di forza. Contestualmente al mio lavoro e alla mia esperienza nel settore HR, ho deciso di assecondare la mia vocazione analitica e creativa studiando sviluppo web. Oggi unisco la capacità di comprendere i bisogni delle persone con la precisione tecnica del codice, creando interfacce che non siano solo belle, ma fatte per essere usate. E siccome '3 is a magic number', ho aggiunto un terzo pilastro alla mia identità: sono una Content Creator — o, come amo definirmi, una Bikefluencer — nel panorama motociclistico. Melius abundare quam deficere!" },
         { id: 2, title: "Moto", sub: "DUCATI MONSTER 696", emoji: "🏍️", color: "card-rose", 
           text: "La mia Ducati Monster 696 rappresenta il mio equilibrio. Guidare richiede concentrazione, rapidità decisionale e una costante ricerca di armonia tra meccanica e movimento. Porto questa stessa mentalità nel mio lavoro: affrontare le sfide con grinta, risolvere i problemi in tempo reale e non smettere mai di esplorare nuove strade." },
-        { id: 3, title: "Progetti", sub: "SELECTED PROJECTS", emoji: "→", color: "card-white", 
+        { id: 3, title: "Progetti", sub: "SELECTED PROJECTS", emoji: "→", color: "card-projects", 
           text: "Dallo sviluppo frontend con React e Next.js alla gestione di database e API. In questa sezione troverai una raccolta di progetti focalizzati su performance ed esperienza utente.",
           projects: [
             { name: "Ridescape", url: "https://github.com/francescarestelli96-bit/ridescape" },
@@ -41,7 +41,7 @@ export default function Home() {
           text: "Hi, I’m Francesca. My path into tech hasn't been linear, and that’s exactly my strength. Alongside my HR background, I followed my analytical and creative calling by studying web development. Today, I bridge the gap between human needs and technical precision, creating interfaces that aren't just beautiful, but built to be used. And since '3 is a magic number', I’ve added a third pillar to my identity: I’m a Content Creator — or as I like to call it, a Bikefluencer — in the motorcycling world. Melius abundare quam deficere!" },
         { id: 2, title: "Bike", sub: "DUCATI MONSTER 696", emoji: "🏍️", color: "card-rose", 
           text: "My Ducati Monster 696 represents my balance. Riding requires focus, quick decision-making, and a constant search for harmony. I bring this same mindset to my work: tackling challenges with grit and solving problems in real-time." },
-        { id: 3, title: "Works", sub: "SELECTED PROJECTS", emoji: "→", color: "card-white", 
+        { id: 3, title: "Works", sub: "SELECTED PROJECTS", emoji: "→", color: "card-projects", 
           text: "From frontend development to API management. Here's a collection of projects focused on performance and user experience.",
           projects: [
             { name: "Ridescape", url: "https://github.com/francescarestelli96-bit/ridescape" },
@@ -71,12 +71,14 @@ export default function Home() {
 
   return (
     <main className="min-h-screen w-screen flex flex-col items-center justify-center p-6 md:p-16 relative">
+      {/* Switch Lingua (Top Right) */}
       <div className="absolute top-6 right-6 md:top-10 md:right-10 z-20">
         <button onClick={() => setLang(lang === 'it' ? 'en' : 'it')} className="lang-switch">
           {lang === 'it' ? 'EN' : 'IT'}
         </button>
       </div>
 
+      {/* Grid Bento */}
       <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-fr md:h-[550px] mt-12 md:mt-0">
         {currentBoxes.map((box) => (
           <div key={box.id} onClick={() => setSelectedBox(box.id)}
@@ -90,6 +92,7 @@ export default function Home() {
         ))}
       </div>
 
+      {/* Modale con effetto Glass estremo */}
       {selectedBox && activeBox && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-2xl" onClick={() => setSelectedBox(null)}>
           <div className="bg-white/10 border border-white/30 backdrop-blur-xl rounded-[3rem] p-10 md:p-14 max-w-2xl w-full relative shadow-2xl" onClick={(e) => e.stopPropagation()}>
@@ -110,6 +113,7 @@ export default function Home() {
         </div>
       )}
 
+      {/* Footer Bianco Visibile */}
       <footer className="mt-16 border-t border-white/20 pt-8 w-full max-w-5xl flex justify-center">
         <p className="text-[11px] tracking-[2.5em] uppercase font-black text-white ml-[2.5em]">FR / PORTFOLIO 2026</p>
       </footer>
